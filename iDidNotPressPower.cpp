@@ -130,12 +130,11 @@ void AutoShutdown::timerEvent(QTimerEvent* /*event*/)
 
 void AutoShutdown::OnCancel()
 {
-	killTimer(iTimerId);
 	ui.label->setText("Cancelled...");
 	this->close();
 }
 
 AutoShutdown::~AutoShutdown()
 {
-
+  killTimer(iTimerId);
 }

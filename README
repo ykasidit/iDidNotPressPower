@@ -7,6 +7,12 @@ Source code is hosted at http://github.com/ykasidit/iDidNotPressPower/
 
 The little program was made because the developer and his friends had sometimes experienced that their notebooks accidentally booted in their notebook-bag when it was hit or dropped, then the notebook became VERY dangerously hot as it powered and stayed on in a closed bag without air flow - so this little app was coded to make sure the user actually booted the notebook intentionally - and moves the mouse - otherwise it would shutdown the notebook in 60 Seconds.
 
+
+THIS PROGRAM USES QT 4.5 (LGPL) DYNAMICALLY LINKED
+--------------------------------------------------
+You can get qt source code and its licenses from http://qt.nokia.com/downloads
+
+
 Compiling
 -----------
 This project was developed and built via "Qt Eclipse Integration for C++" please see more info at:
