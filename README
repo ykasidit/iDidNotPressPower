@@ -13,6 +13,9 @@ http://qt.nokia.com/developer/eclipse-integration
 
 Installing
 ----------
+
+- Your notebook must be set to auto-login.
+
 GNU/Linux:
 1. Allow it to execute: chmod +x iDidNotPressPower
 2. This app must be run as root (because "halt" needs root) at the computer startup, for example, in ubuntu "session and startup" add a new one and use command: "echo \"mypassword\" | sudo -S /home/<your user>/<folder>/iDidNotPressPower"
