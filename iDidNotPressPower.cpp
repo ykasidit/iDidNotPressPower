@@ -25,7 +25,7 @@ AutoShutdown::AutoShutdown(QWidget *parent)
 {
 	ui.setupUi(this);
 	iTimerId = startTimer(1000);  //1 second
-	iCountDown = 60;
+	iCountDown = 3;
 }
 
 void AutoShutdown::timerEvent(QTimerEvent* /*event*/)
@@ -47,7 +47,10 @@ void AutoShutdown::timerEvent(QTimerEvent* /*event*/)
 		QString cmd;
 		QStringList arguments;
 #ifdef Q_WS_WIN
-                cmd = "shutdown -s -t 01";
+                cmd = "shutdown.exe";
+                arguments << "-s";
+                arguments << "-t";
+                arguments << "01";
 #else
                 //this app must be run as root, for example, in ubuntu startup list manager use command: "echo \"mypassword\" | sudo -S /home/<your user>/<folder>/iDidNotPressPower"
                 cmd = "halt";
