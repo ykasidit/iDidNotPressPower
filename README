@@ -18,19 +18,23 @@ Compiling
 This project was developed and built via "Qt Eclipse Integration for C++" please see more info at:
 http://qt.nokia.com/developer/eclipse-integration
 
+To make a release build, right click project > properties > C/C++ make project > Make Builder tab > Build: release (default would be "debug")  
+
 Installing
 ----------
 
 - Your notebook must be set to auto-login.
 
 GNU/Linux:
-1. Compile and put the binary in your home folder, allow it to execute: chmod +x iDidNotPressPower
-2. Make a new file, rename it as autoshut.sh, chmod +x autoshut.sh. This app must be run as root (because "halt" needs root), edit your sh to contain something like:
+1. Compile and put the binary in your home folder, allow it to execute: chmod +x iDidNotPressPower, and chmod +x iDidNotPressPower.sh 
+2. Make a new file, rename it as autoshut.sh, chmod +x autoshut.sh. This app must be run as root (because "halt" needs 
+root), edit your sh to contain something like:
 
-echo "mypassword" | sudo -S /home/<your user>/iDidNotPressPower
+echo "mypassword" | sudo -S /home/<your user>/<folder>/iDidNotPressPower.sh
+
 
 3.  Add to computer startup, for example, in ubuntu "session and startup" add a new one and copy the autoshut.sh file in the file browser, paste it into "command", or enter something like:
-/home/<your user>/autoshut.sh
+/home/<your user>/<folder>/autoshut.sh
 
 Windows:
 1. Compile
