@@ -28,7 +28,7 @@ echo "mypassword" | sudo -S /home/<your user>/iDidNotPressPower
 
 Windows:
 1. Compile
-2. Place iDidNotPressPower.exe in the "Startup" folder.
+2. Create a shortcut to iDidNotPressPower.exe, put the shortcut in the "Startup" folder. (Go to Start > All Programs > right-click "Startup" then "Open" - if would be like "C:\Documents and Settings\<User>\Start Menu\Programs\Startup")
 
 License
 -----------
