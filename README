@@ -1,24 +1,24 @@
 About
 -----------
-iDidNotPressPower is used to auto-start and shutdown the notebook computer within 60 seconds if user doesn't press Cancel.
+iDidNotPressPower is used to shutdown the notebook computer within 60 seconds in case it was accidentally powered-on by a drop or shock - if user doesn't press Cancel.
 
 The original version was developed and deployed at http://www.clearevo.com/
 
 The little program was made because the developer and his friends had sometimes experienced that their notebooks accidentally booted in their notebook-bag when it was hit or dropped, then the notebook became VERY dangerously hot as it powered and stayed on in a closed bag without air flow - so this little app was coded to make sure the user actually booted the notebook intentionally - and presses Cancel - otherwise it would shutdown the notebook in 60 Seconds.
 
-Installing
-----------
-GNU/Linux:
-
-This app must be run as root (because "halt" needs root) at the computer startup, for example, in ubuntu startup list manager use command: "echo \"mypassword\" | sudo -S /home/<your user>/<folder>/iDidNotPressPower"
-
-Windows:
-Place iDidNotPressPower.exe in the "Startup" folder.
-
 Compiling
 -----------
 This project was developed and built via "Qt Eclipse Integration for C++" please see more info at:
 http://qt.nokia.com/developer/eclipse-integration
+
+Installing
+----------
+GNU/Linux:
+1. Allow it to execute: chmod +x iDidNotPressPower
+2. This app must be run as root (because "halt" needs root) at the computer startup, for example, in ubuntu "session and startup" add a new one and use command: "echo \"mypassword\" | sudo -S /home/<your user>/<folder>/iDidNotPressPower"
+
+Windows:
+Place iDidNotPressPower.exe in the "Startup" folder.
 
 License
 -----------
