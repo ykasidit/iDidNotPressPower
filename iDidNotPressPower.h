@@ -35,12 +35,15 @@ public:
 
 public slots:
 	void OnCancel();
+	bool GetPointerPos(int& x, int &y);
 
 private:
     Ui::AutoShutdownClass ui;
     void timerEvent(QTimerEvent *event);
     int iTimerId;
     int iCountDown;
+    int iPrevX;
+    int iPrevY;
 };
 
 #endif // AUTOSHUTDOWN_H

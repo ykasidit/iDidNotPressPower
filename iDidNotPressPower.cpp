@@ -20,12 +20,53 @@
 #include "iDidNotPressPower.h"
 #include <QProcess>
 
+#ifndef Q_WS_WIN
+#include <X11/Xlib.h>
+#endif
+
 AutoShutdown::AutoShutdown(QWidget *parent)
     : QWidget(parent)
 {
 	ui.setupUi(this);
 	iTimerId = startTimer(1000);  //1 second
 	iCountDown = 60;
+	iPrevX = -1;
+	iPrevY = -1;
+}
+
+bool AutoShutdown::GetPointerPos(int& x, int &y)
+{
+#ifdef Q_WS_WIN
+  POINT p ={0};
+  ::GetCursorPos(&p);
+  x = p.x;
+  y = p.y;
+#else
+      Display *dpy;
+      Window root;
+      Window ret_root;
+      Window ret_child;
+      int root_x;
+      int root_y;
+      int win_x;
+      int win_y;
+      unsigned int mask;
+
+      dpy = XOpenDisplay(NULL);
+      root = XDefaultRootWindow(dpy);
+
+      if(XQueryPointer(dpy, root, &ret_root, &ret_child, &root_x, &root_y,
+                                       &win_x, &win_y, &mask))
+      {
+        x= root_x;
+        y= root_y;
+      }
+      else
+      {
+        return false;
+      }
+#endif
+
 }
 
 void AutoShutdown::timerEvent(QTimerEvent* /*event*/)
@@ -39,7 +80,26 @@ void AutoShutdown::timerEvent(QTimerEvent* /*event*/)
 		raise();
 		activateWindow();
 
-
+		if(iPrevX == -1) //if first time pos not initialized
+		  GetPointerPos(iPrevX,iPrevY);
+		else
+		  {
+		    int nowx=-1;
+		    int nowy=-1;
+		    if(GetPointerPos(nowx,nowy))
+		      {
+                        if(nowx!=iPrevX || nowy!=iPrevY)
+                          {
+                            //mouse moved so exit
+                            ui.label->setText("Mouse moved - user active, Cancelling...");
+                            this->close();
+                          }
+                        else
+                          {
+                            //do nothing
+                          }
+		      }
+		  }
 	  }
 	else
 	{
@@ -55,14 +115,14 @@ void AutoShutdown::timerEvent(QTimerEvent* /*event*/)
                 //this app must be run as root, for example, in ubuntu startup list manager use command: "echo \"mypassword\" | sudo -S /home/<your user>/<folder>/iDidNotPressPower"
                 cmd = "halt";
 #endif
-                QProcess builder;
-                builder.setProcessChannelMode(QProcess::MergedChannels);
-                builder.start(cmd,arguments);
+                QProcess shutdownproc;
+                shutdownproc.setProcessChannelMode(QProcess::MergedChannels);
+                shutdownproc.start(cmd,arguments);
 
-		if (!builder.waitForFinished())
-		   ui.label->setText(builder.errorString());
+		if (!shutdownproc.waitForFinished())
+		   ui.label->setText(shutdownproc.errorString());
 		 else
-		   ui.label->setText(builder.readAll());
+		   ui.label->setText(shutdownproc.readAll());
 
 		//close(); dont close - let result/error show on screen
 	}
