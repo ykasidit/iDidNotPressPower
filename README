@@ -22,7 +22,7 @@ GNU/Linux:
 
 echo "mypassword" | sudo -S /home/<your user>/iDidNotPressPower
 
-2.  at the computer startup, for example, in ubuntu "session and startup" add a new one and copy the autoshut.sh file in the file browser, paste it into "command", or enter something like:
+3.  Add to computer startup, for example, in ubuntu "session and startup" add a new one and copy the autoshut.sh file in the file browser, paste it into "command", or enter something like:
 /home/<your user>/autoshut.sh
 
 Windows:
