@@ -1,11 +1,11 @@
 About
 -----------
-iDidNotPressPower is used to shutdown the notebook computer within 60 seconds in case it was accidentally powered-on by a drop or shock - if user doesn't press Cancel.
+iDidNotPressPower is used to shutdown the notebook computer within 60 seconds in case it was accidentally powered-on by a drop or shock - it would cancel the countdown and exit if user moves the mouse cursor.
 
 The original version was developed and deployed at http://www.clearevo.com/
 Source code is hosted at http://github.com/ykasidit/iDidNotPressPower/
 
-The little program was made because the developer and his friends had sometimes experienced that their notebooks accidentally booted in their notebook-bag when it was hit or dropped, then the notebook became VERY dangerously hot as it powered and stayed on in a closed bag without air flow - so this little app was coded to make sure the user actually booted the notebook intentionally - and presses Cancel - otherwise it would shutdown the notebook in 60 Seconds.
+The little program was made because the developer and his friends had sometimes experienced that their notebooks accidentally booted in their notebook-bag when it was hit or dropped, then the notebook became VERY dangerously hot as it powered and stayed on in a closed bag without air flow - so this little app was coded to make sure the user actually booted the notebook intentionally - and moves the mouse - otherwise it would shutdown the notebook in 60 Seconds.
 
 Compiling
 -----------
