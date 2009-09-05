@@ -25,7 +25,7 @@ AutoShutdown::AutoShutdown(QWidget *parent)
 {
 	ui.setupUi(this);
 	iTimerId = startTimer(1000);  //1 second
-	iCountDown = 3;
+	iCountDown = 60;
 }
 
 void AutoShutdown::timerEvent(QTimerEvent* /*event*/)
