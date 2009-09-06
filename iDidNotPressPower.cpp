@@ -67,6 +67,7 @@ bool AutoShutdown::GetPointerPos(int& x, int &y)
       }
 #endif
 
+      return true;
 }
 
 void AutoShutdown::timerEvent(QTimerEvent* /*event*/)
