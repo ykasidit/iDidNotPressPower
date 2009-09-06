@@ -22,6 +22,8 @@
 
 #ifndef Q_WS_WIN
 #include <X11/Xlib.h>
+#else
+#include <Windows.h>
 #endif
 
 AutoShutdown::AutoShutdown(QWidget *parent)
