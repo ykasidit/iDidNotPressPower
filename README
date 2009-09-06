@@ -26,14 +26,14 @@ Installing
 - Your notebook must be set to auto-login.
 
 GNU/Linux:
-1. Compile and put the binary in your home folder, allow it to execute: chmod +x iDidNotPressPower, and chmod +x iDidNotPressPower.sh 
+1. Compile and put the binary in your home folder, allow it to execute: chmod +x iDidNotPressPower, test running it: ./iDidNotPressPower
 2. Make a new file, rename it as autoshut.sh, chmod +x autoshut.sh. This app must be run as root (because "halt" needs 
 root), edit your sh to contain something like:
 
-echo "mypassword" | sudo -S /home/<your user>/<folder>/iDidNotPressPower.sh
+echo "mypassword" | sudo -S /home/<your user>/<folder>/iDidNotPressPower
 
 
-3.  Add to computer startup, for example, in ubuntu "session and startup" add a new one and copy the autoshut.sh file in the file browser, paste it into "command", or enter something like:
+3.  Add to computer startup, for example, in ubuntu "session and startup" add a new one and copy the autoshut.sh file in the file browser, paste it into "command" so you'll get the file path (remove file:// if present), or enter something like:
 /home/<your user>/<folder>/autoshut.sh
 
 Windows:

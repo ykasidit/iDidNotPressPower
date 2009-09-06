@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading ui file 'iDidNotPressPower.ui'
 **
-** Created: Sun Sep 6 06:29:02 2009
+** Created: Sun Sep 6 07:00:34 2009
 **      by: Qt User Interface Compiler version 4.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling ui file!
