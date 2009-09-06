@@ -2,6 +2,8 @@ About
 -----------
 iDidNotPressPower is used to shutdown the notebook computer within 60 seconds in case it was accidentally powered-on by a drop or shock - it would cancel the countdown and exit if user moves the mouse cursor.
 
+iDidNotPressPower is developed for both Ubuntu GNU/Linux and Windows.
+
 The original version was developed and deployed at http://www.clearevo.com/
 Source code is hosted at http://github.com/ykasidit/iDidNotPressPower/
 
@@ -26,18 +28,22 @@ Installing
 - Your notebook must be set to auto-login.
 
 GNU/Linux:
-1. Compile and put the binary in your home folder, allow it to execute: chmod +x iDidNotPressPower, test running it: ./iDidNotPressPower
-2. Make a new file, rename it as autoshut.sh, chmod +x autoshut.sh. This app must be run as root (because "halt" needs 
+1. Get and install Qt 4.5, compile it. 
+OR
+1. Use the (Ubuntu) compiled binary, make sure you have libqtcore4 and libqtgui4 installed (run in terminal: sudo apt-get install libqtcore4 libqtgui4).
+2. Allow it to execute: chmod +x iDidNotPressPower, test running it: ./iDidNotPressPower
+3. Make a new file, rename it as autoshut.sh, chmod +x autoshut.sh. This app must be run as root (because "halt" needs 
 root), edit your sh to contain something like:
 
 echo "mypassword" | sudo -S /home/<your user>/<folder>/iDidNotPressPower
 
-
-3.  Add to computer startup, for example, in ubuntu "session and startup" add a new one and copy the autoshut.sh file in the file browser, paste it into "command" so you'll get the file path (remove file:// if present), or enter something like:
+4.  Add to computer startup, for example, in ubuntu "session and startup" add a new one and copy the autoshut.sh file in the file browser, paste it into "command" so you'll get the file path (remove file:// if present), or enter something like:
 /home/<your user>/<folder>/autoshut.sh
 
 Windows:
-1. Compile
+1. Get and install Qt 4.5, compile it.
+OR
+1. Use the compiled binary windows release zip, the qt lib dlls should be included, try double-click the iDidNotPressPower.exe.
 2. Create a shortcut to iDidNotPressPower.exe, put the shortcut in the "Startup" folder. (Go to Start > All Programs > right-click "Startup" then "Open" - if would be like "C:\Documents and Settings\<User>\Start Menu\Programs\Startup")
 
 License

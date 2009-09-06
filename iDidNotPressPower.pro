@@ -1,5 +1,4 @@
 TEMPLATE = app
-CONFIGURATION = release
 TARGET = iDidNotPressPower
 QT += core \
     gui
